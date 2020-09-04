@@ -1,0 +1,259 @@
+//==Vars==//
+$padding: 1%;
+$font1: 'Courgette', cursive;
+$font2: 'Inconsolata', monospace;
+$font3: 'Kaushan Script', cursive;
+$color1: rgb(238, 204, 12);
+$color2: rgb(185, 164, 44);
+$color3: rgb(219, 194, 52);
+
+//==Media Queries==//
+
+  @media (min-width: 480px) {
+    header{
+        border-radius: 50%;
+        background-color: rgba(34, 34, 34, 0.432);
+        
+    }
+  }
+
+
+//==Animations==//
+
+@keyframes aSize{
+    from{
+        font-size: 18px;
+    }to{
+        color: rgb(219, 194, 52);
+        font-size: 24px;
+    }
+}
+
+@keyframes colorise{
+    from{color:#222 ;}
+    to{color:$color2;}
+}
+
+//==Custom Classes==//
+.parallax{
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.btn {
+    cursor: pointer;
+    position: relative;
+    padding: 10px 20px;
+    background: #ffffff;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  }
+  .btn:after, .btn:before {
+    content: " ";
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    border: 0px solid #fff;
+    transition-duration: 1s;
+  }
+  .btn:after {
+    top: -1px;
+    left: -1px;
+    border-top: 5px solid $color3;
+    border-left: 5px solid $color3;
+  }
+  .btn:before {
+    bottom: -1px;
+    right: -1px;
+    border-bottom: 5px solid $color3;
+    border-right: 5px solid $color3;
+  }
+  .btn:hover {
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
+  .btn:hover:before, .btn:hover:after {
+    width: 102%;
+    height: 102%;
+  }
+
+//=====================================//
+
+body{
+    background-image: url('https://images.pexels.com/photos/4021952/pexels-photo-4021952.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+#mainHeader{
+    background-image: url('../img/bgsauce.png');
+    background-size: 100%;
+    padding: $padding;
+    height: 800px;
+    background-color: #fff;
+    box-sizing: border-box;
+    overflow: hidden;
+    header{
+        h1{
+            animation-duration: 1.5s;
+            color: $color1;
+            font-family: $font3;
+            font-size: 80px;
+            text-align: center;
+        }
+        li{
+            font-family: $font1;
+            font-size: 20px;
+            list-style: none;
+            padding: $padding;
+            transition-duration: 0.5s;
+
+            a{
+                text-decoration: none;
+                color: $color3;
+            }
+
+        }
+        li:hover{
+            font-size: 28px;
+            color: $color2;
+        }
+
+        #li1{animation-duration: 3s;}
+        #li2{animation-duration: 2.5s;}
+        #li3{animation-duration: 1.5s;}
+    }
+}
+
+//=====================================//
+
+
+#mainSection{
+    background-color: rgba(34, 34, 34, 0.424);
+    border-radius: 20px;
+    height: 400px;
+    color: black;
+    height: auto;
+    padding: $padding;
+
+    #carouselExampleControls{
+        border-style: none;
+        background-color: $color2;
+        border-radius: 20px;
+        img{
+            border-style: none;
+            width: 100%;
+            height: 800px;
+        }
+    }
+}
+//=====================================//
+
+#desc-1{
+    background-image: url('../img/bgsauce.png');
+    background-size: 100%;
+    height: 200px;
+    
+    h2{
+        font-family: $font1;
+        color: $color1;
+    }p{
+        color: transparent;
+        font-family: $font1;
+    }
+}
+//=====================================//
+
+
+
+#takeAwaySection{
+    background-color: rgba(34, 34, 34, 0.424);
+    border-radius: 20px;
+    margin-top: 2%;
+    h2{
+        font-size: 50px;
+        font-family: $font3;
+        color: $color1;
+    }
+    h3{
+        font-size: 40px;
+        color: $color1;
+        font-family: $font3;
+    }
+    #goMenu{
+        background-color: $color2;
+        border-style: none;
+        transition-duration: 0.5s;
+        width: 120px; height: 60px;
+        a{
+            color: #222;
+            font-size: 30px;
+            font-family: $font3;
+            text-decoration: none;
+            transition-duration: 0.5s;
+            text-shadow: #222 1px 1px;
+        }
+    }#goMenu:hover{
+        background-color: $color3;
+        transform: scale(1.1);
+        box-shadow: $color1 2px 1px 1px 2px;
+    }
+    .arrow{
+        animation: bounce 8s infinite;
+        font-size: 80px;
+        color: $color1;
+        font-family: $font3;
+    }
+    li{
+        list-style: none;
+        color: $color3;
+        font-size: 22px;
+        font-family: $font2;
+        text-align: left;
+        clear: both;
+    }
+    span{
+        font-size: 16px;
+        left: -20px;
+        position: absolute;
+    }
+}
+//=====================================//
+#menuContainer{
+    color: $color1;
+    padding: $padding;
+    .menuCard{
+        font-family: $font2;
+        box-shadow: 1px 1px 1px 0.6px #222;
+        background-color: rgba(34, 34, 34, 0.185);
+        padding: $padding;
+
+        h6{
+            font-size: 18px;
+        }
+        h2{
+            text-align: center;
+            font-size: 42px;
+        }
+    }
+}
+
+//=====================================//
+#mainFooter{
+    background-color: rgba(34, 34, 34, 0.424);
+    border-radius: 20px;
+    margin-top: 2%;
+    color: $color1;
+    text-align: center;
+    #copyright{
+        font-family: $font1;
+        font-size: 18px;
+    }
+    p{
+        font-family: $font2;
+    }
+}

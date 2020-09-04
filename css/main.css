@@ -1,0 +1,196 @@
+@media (min-width: 480px) {
+  header {
+    border-radius: 50%;
+    background-color: rgba(34, 34, 34, 0.432); } }
+@keyframes aSize {
+  from {
+    font-size: 18px; }
+  to {
+    color: #dbc234;
+    font-size: 24px; } }
+@keyframes colorise {
+  from {
+    color: #222; }
+  to {
+    color: #b9a42c; } }
+.parallax {
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.btn {
+  cursor: pointer;
+  position: relative;
+  padding: 10px 20px;
+  background: #ffffff;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
+
+.btn:after, .btn:before {
+  content: " ";
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  border: 0px solid #fff;
+  transition-duration: 1s; }
+
+.btn:after {
+  top: -1px;
+  left: -1px;
+  border-top: 5px solid #dbc234;
+  border-left: 5px solid #dbc234; }
+
+.btn:before {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 5px solid #dbc234;
+  border-right: 5px solid #dbc234; }
+
+.btn:hover {
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px; }
+
+.btn:hover:before, .btn:hover:after {
+  width: 102%;
+  height: 102%; }
+
+body {
+  background-image: url("https://images.pexels.com/photos/4021952/pexels-photo-4021952.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+#mainHeader {
+  background-image: url("../img/bgsauce.png");
+  background-size: 100%;
+  padding: 1%;
+  height: 800px;
+  background-color: #fff;
+  box-sizing: border-box;
+  overflow: hidden; }
+  #mainHeader header h1 {
+    animation-duration: 1.5s;
+    color: #eecc0c;
+    font-family: "Kaushan Script", cursive;
+    font-size: 80px;
+    text-align: center; }
+  #mainHeader header li {
+    font-family: "Courgette", cursive;
+    font-size: 20px;
+    list-style: none;
+    padding: 1%;
+    transition-duration: 0.5s; }
+    #mainHeader header li a {
+      text-decoration: none;
+      color: #dbc234; }
+  #mainHeader header li:hover {
+    font-size: 28px;
+    color: #b9a42c; }
+  #mainHeader header #li1 {
+    animation-duration: 3s; }
+  #mainHeader header #li2 {
+    animation-duration: 2.5s; }
+  #mainHeader header #li3 {
+    animation-duration: 1.5s; }
+
+#mainSection {
+  background-color: rgba(34, 34, 34, 0.424);
+  border-radius: 20px;
+  height: 400px;
+  color: black;
+  height: auto;
+  padding: 1%; }
+  #mainSection #carouselExampleControls {
+    border-style: none;
+    background-color: #b9a42c;
+    border-radius: 20px; }
+    #mainSection #carouselExampleControls img {
+      border-style: none;
+      width: 100%;
+      height: 800px; }
+
+#desc-1 {
+  background-image: url("../img/bgsauce.png");
+  background-size: 100%;
+  height: 200px; }
+  #desc-1 h2 {
+    font-family: "Courgette", cursive;
+    color: #eecc0c; }
+  #desc-1 p {
+    color: transparent;
+    font-family: "Courgette", cursive; }
+
+#takeAwaySection {
+  background-color: rgba(34, 34, 34, 0.424);
+  border-radius: 20px;
+  margin-top: 2%; }
+  #takeAwaySection h2 {
+    font-size: 50px;
+    font-family: "Kaushan Script", cursive;
+    color: #eecc0c; }
+  #takeAwaySection h3 {
+    font-size: 40px;
+    color: #eecc0c;
+    font-family: "Kaushan Script", cursive; }
+  #takeAwaySection #goMenu {
+    background-color: #b9a42c;
+    border-style: none;
+    transition-duration: 0.5s;
+    width: 120px;
+    height: 60px; }
+    #takeAwaySection #goMenu a {
+      color: #222;
+      font-size: 30px;
+      font-family: "Kaushan Script", cursive;
+      text-decoration: none;
+      transition-duration: 0.5s;
+      text-shadow: #222 1px 1px; }
+  #takeAwaySection #goMenu:hover {
+    background-color: #dbc234;
+    transform: scale(1.1);
+    box-shadow: #eecc0c 2px 1px 1px 2px; }
+  #takeAwaySection .arrow {
+    animation: bounce 8s infinite;
+    font-size: 80px;
+    color: #eecc0c;
+    font-family: "Kaushan Script", cursive; }
+  #takeAwaySection li {
+    list-style: none;
+    color: #dbc234;
+    font-size: 22px;
+    font-family: "Inconsolata", monospace;
+    text-align: left;
+    clear: both; }
+  #takeAwaySection span {
+    font-size: 16px;
+    left: -20px;
+    position: absolute; }
+
+#menuContainer {
+  color: #eecc0c;
+  padding: 1%; }
+  #menuContainer .menuCard {
+    font-family: "Inconsolata", monospace;
+    box-shadow: 1px 1px 1px 0.6px #222;
+    background-color: rgba(34, 34, 34, 0.185);
+    padding: 1%; }
+    #menuContainer .menuCard h6 {
+      font-size: 18px; }
+    #menuContainer .menuCard h2 {
+      text-align: center;
+      font-size: 42px; }
+
+#mainFooter {
+  background-color: rgba(34, 34, 34, 0.424);
+  border-radius: 20px;
+  margin-top: 2%;
+  color: #eecc0c;
+  text-align: center; }
+  #mainFooter #copyright {
+    font-family: "Courgette", cursive;
+    font-size: 18px; }
+  #mainFooter p {
+    font-family: "Inconsolata", monospace; }
+
+/*# sourceMappingURL=main.css.map */
