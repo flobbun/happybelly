@@ -1,8 +1,4 @@
 //Vars
-const APIkey = "?apiKey=ff520b1d28314b6e9bdf7762b4908f11";
-let APIquery = ""
-let APIroot = "food/products/search";
-let APIlink = "https://api.spoonacular.com/" + APIroot + APIkey + APIquery;
 
 let menuContainer = document.getElementById("menuContainer")
 let menuOpen = false;
@@ -16,35 +12,51 @@ goMenu = document.getElementById("goMenu");
 //
 li3 = document.getElementById("li3");
 
-
+let menuCard = document.createElement("div");
+menuCard.classList.add("animate__animated", "animate__bounceIn", "menuCard", "col-md-6", "container");
 //==================================================//
 
 let tmpMenu = ``;
 class foodAPI{
-    constructor(){}
+    constructor(id){
+
+        this.APIkey = "?apiKey=ff520b1d28314b6e9bdf7762b4908f11";
+        this.APIquery = "";
+        this.keyID = id;
+        this.APIroot = "food/menuItems/"+this.keyID;
+        this.APIlink = "https://api.spoonacular.com/" + this.APIroot + this.APIkey + this.APIquery;
+
+    }
 
     getFood(){
-        fetch(APIlink)
+        fetch(this.APIlink)
         .then(res => res.json())
         .then(data =>{
             console.log(data);
+
+            let desc = "No description";
+            if(data.description != undefined || data.description != null)
+            {
+                desc = data.description;
+            }
 
             //
     tmpMenu = `
     <h2> Menu </h2>
     <div>
-    <h6 class="p-4">Foodname</h6>
+    <h6 class="p-4">${data.title}</h6>  
 
-    <p>Description-Lm nam ea saepe sint minima saepe sint minima, dolor laborum ipsam illo.</p>
-    <img src="" alt="">
+    <p id="dataDescription">${desc}...</p>
+    <div class="container col-md-6"><img src="${data.images[0]}" alt=""></div>
     </div>
     `;
+
+    menuContainer.appendChild(menuCard);
+    menuCard.innerHTML = tmpMenu;
         })
     }
 } 
 
-foodapi = new foodAPI();
-foodapi.getFood();
 
 //==================================================//
 
@@ -109,12 +121,18 @@ $('.carousel').carousel({
 
 //=====Take Away Menu========//
 
+
 goMenu.addEventListener("click", ()=>{
     if(!menuOpen){
+        foodapi = new foodAPI(42571);
+        foodapi.getFood();
+
        menuOpen = true;
-       let menuCard = document.createElement("div");
-       menuCard.classList.add("animate__animated", "animate__bounceIn", "menuCard", "col-md-6", "container");
-       menuCard.innerHTML = tmpMenu;
-       menuContainer.appendChild(menuCard);
+
+
+
+    }else{
+        menuContainer.removeChild(menuCard);
+        menuOpen = false;
     }
 })

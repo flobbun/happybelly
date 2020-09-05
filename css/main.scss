@@ -216,10 +216,15 @@ body{
         text-align: left;
         clear: both;
     }
+    #dataDescription{
+    }
     span{
         font-size: 16px;
         left: -20px;
         position: absolute;
+    }
+    img{
+        border-radius: 10px;
     }
 }
 //=====================================//
@@ -228,7 +233,7 @@ body{
     padding: $padding;
     .menuCard{
         font-family: $font2;
-        box-shadow: 1px 1px 1px 0.6px #222;
+        box-shadow: 2px 2px 0px 0px rgba(51, 51, 51, 0.609);
         background-color: rgba(34, 34, 34, 0.185);
         padding: $padding;
 
