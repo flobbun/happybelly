@@ -34,6 +34,19 @@ $color3: rgb(219, 194, 52);
     to{color:$color2;}
 }
 
+@keyframes colorise2{
+    from{
+        color: #222;
+        background-color: $color2;
+    }
+    to{
+        color: red;
+        background-color: transparent;
+        font-size: 18px;
+        font-weight: bold;
+    }
+}
+
 //==Custom Classes==//
 .parallax{
     background-attachment: fixed;
@@ -237,6 +250,33 @@ body{
         background-color: rgba(34, 34, 34, 0.185);
         padding: $padding;
 
+        #take{
+            width: 160px;
+            transition-duration: 0.5s;
+        }#take:hover{
+            transform: scale(1.2);
+            background-color: rgb(255, 230, 0);
+            font-size: 20px;
+            z-index: 10000;
+        }
+
+        button{
+            width: 100px;
+            margin: 2px;
+            margin-left: 6px;
+            margin-right: 6px;
+            font-family: $font1;
+            font-size: 18px;
+            border-style: none;
+            border-radius: 20px;
+            color: #222;
+            background-color: $color1;
+            transition-duration: 0.5s;
+        }button:hover{
+            transform: scale(1.1);
+            filter: opacity(90%);
+        }
+
         h6{
             font-size: 18px;
         }
@@ -245,6 +285,49 @@ body{
             font-size: 42px;
         }
     }
+}
+
+.takeAwayList{  
+    font-family: $font2;
+    box-shadow: 2px 2px 0px 0px rgba(51, 51, 51, 0.609);
+    background-color: rgba(34, 34, 34, 0.185);
+    padding: $padding;
+
+    .newListElement{
+        border-radius: 20px;
+        padding: $padding;
+        border-style: none;
+        width: 440px;
+        display: inline-flex;
+        margin: 4px;
+        flex-wrap: wrap;
+
+        img{
+            width: 50px;
+            height: 50px;
+        }
+    
+        button{
+            background-color: $color2;
+            border-style: none;
+            border-radius: 30px;
+            width: 18px;
+            height: 20px;
+            text-align: center;
+            position: absolute;
+            right: 50px;
+            top: -4px;
+        }button:hover{
+            background-color: transparent;
+            color: red;
+            transform: scale(1.1);
+            animation: colorise2 1s ease-in-out;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    }
+
+
 }
 
 //=====================================//
