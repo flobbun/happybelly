@@ -57,6 +57,6 @@ window.onscroll = function (){
 $('.cCarousel').tilt({
     perspective: 500,
     easing: "cubic-bezier(.03,.98,.52,.99)",
-    speed: 300,
+    speed: 900,
     scale: 0.8
 })

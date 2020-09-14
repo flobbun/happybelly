@@ -338,19 +338,25 @@ body {
   #mainHeader header #li3 {
     animation-duration: 1.5s; }
 
+#mainSection:hover {
+  background-color: transparent; }
+
 #mainSection {
   background-color: rgba(34, 34, 34, 0.424);
   border-radius: 20px;
   height: 400px;
   color: black;
   height: auto;
-  padding: 1%; }
+  padding: 1%;
+  overflow: hidden; }
   #mainSection #carouselExampleControls {
-    width: 94%;
+    width: 90%;
     border-style: none;
     background-color: #b9a42c;
-    border-radius: 20px; }
+    border-radius: 20px;
+    overflow: hidden; }
     #mainSection #carouselExampleControls img {
+      overflow: hidden;
       border-style: none;
       margin: auto;
       width: 100%;

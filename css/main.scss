@@ -437,7 +437,7 @@ body{
 
 //=====================================//
 
-
+#mainSection:hover{background-color: transparent;}
 #mainSection{
     background-color: rgba(34, 34, 34, 0.424);
     border-radius: 20px;
@@ -445,13 +445,16 @@ body{
     color: black;
     height: auto;
     padding: $padding;
+    overflow: hidden;
 
     #carouselExampleControls{
-        width: 94%;
+        width: 90%;
         border-style: none;
         background-color: $color2;
         border-radius: 20px;
+        overflow: hidden;
         img{
+            overflow: hidden;
             border-style: none;
             margin: auto;
             width: 100%;
