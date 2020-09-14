@@ -4,9 +4,11 @@ let menuContainer = document.getElementById("menuContainer")
 let menuOpen = false;
 let listOpen = false;
 
+let payButton = document.createElement("div");
+payButton.classList.add("row","col-md-12", "justify-content-center");
+
 let ID = 42571;
 let listID = 0;
-let newListElement = [];
 let newLE = [];
 let actualData = [];
 
@@ -26,6 +28,34 @@ li3 = document.getElementById("li3");
 let tmpMenu = ``;
 let tmpTakeAway = ``;
 let tmpTakeAwayCont = `<h2 class="text-center"> Products List </h2>`;
+let tmpPayButton = `
+<div>
+
+<div class="containerx">
+<div class="left-side">
+ <div class="card">
+  <div class="card-line"></div>
+  <div class="buttons"></div>
+ </div>
+ <div class="post">
+  <div class="post-line"></div>
+  <div class="screen">
+   <div class="dollar">$</div>
+  </div>
+  <div class="numbers"></div>
+  <div class="numbers-line2"></div>
+ </div>
+</div>
+<div class="right-side">
+ <div class="new">Pay $</div>
+ 
+  <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 451.846 451.847"><path d="M345.441 248.292L151.154 442.573c-12.359 12.365-32.397 12.365-44.75 0-12.354-12.354-12.354-32.391 0-44.744L278.318 225.92 106.409 54.017c-12.354-12.359-12.354-32.394 0-44.748 12.354-12.359 32.391-12.359 44.75 0l194.287 194.284c6.177 6.18 9.262 14.271 9.262 22.366 0 8.099-3.091 16.196-9.267 22.373z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#cfcfcf"/></svg>
+
+</div>
+</div>
+
+</div>
+`;
 
 //Elements Creation
 let menuCard = document.createElement("div");
@@ -79,7 +109,12 @@ class foodAPI{
     <div class="row justify-content-center p-4 col-md-12">
         <button onclick="prev()">Previous</button> 
         <button id="take" onclick="take()">Take it!</button> 
+        
         <button onclick="next()">Next</button>
+        <div class="row col-md-6 m-2 p-4">
+            <label for="number">How many items?</label>
+            <input type="number" name="number" value=1 min=1 max=10 id="nItems">
+        </div>
     </div>
     `;
 
@@ -102,18 +137,20 @@ class listElement{
         tmpTakeAway=`
         <div class="row newListElement col-md-2 p-2">
             <img src="${actualData.images[0]}" alt="">
-            <button id="destroyButton">X</button>
     
-                        
         </div>
         `;
 
-        newListElement[this.id] = document.createElement("div"); 
-        newListElement[this.id].classList.add("newListElement");
-        takeAwayList.appendChild(newListElement[this.id]);
-        newListElement[this.id].innerHTML += tmpTakeAway;
+        this.newListElement = document.createElement("div"); 
+        this.newListElement.classList.add("newListElement", "col-md-2");
+        takeAwayList.appendChild(this.newListElement);
+        this.newListElement.innerHTML += tmpTakeAway;
+        takeAwayList.appendChild(payButton);
 
-        this.destroyButton = document.getElementById("destroyButton");
+
+        this.destroyButton = document.createElement("button");
+        this.destroyButton.innerHTML="X";
+        this.newListElement.appendChild(this.destroyButton);
         this.destroyButton.addEventListener("click", ()=>{
             this.destroy();
         })
@@ -121,21 +158,22 @@ class listElement{
     }
 
     destroy(){
-        alert(this.id)
-        takeAwayList.removeChild(newListElement[this.id]);
-        newLE.pop();
         listID--;
+        takeAwayList.removeChild(this.newListElement);
+        newLE.pop();
+        delete this;
     }
 
 }
 
 
 //==================================================//
-//Saving API data in a variable//
-
+//Saving data
 function getData(arrOfObjs){
     actualData = arrOfObjs;
   }
+
+//==================================================//
 
 //=========================================================//
 //=========Take Away List======//
@@ -146,78 +184,25 @@ take = () =>{
                 menuContainer.insertBefore(takeAwayList, menuCard);
                 takeAwayList.innerHTML = tmpTakeAwayCont;
 
+
                 listID++;
                 newLE[listID] = new listElement(listID);
 
-                console.log(listID + " "+newLE+ " "+newLE.length); 
 
-                listOpen = false;
+                payButton.innerHTML=tmpPayButton
+                payButton.id = "buyButtonContainer";
+                
+
+
+                listOpen = true;
             }else{
                listID++;
                newLE[listID] = new listElement(listID);
                
-               console.log(listID + " "+newLE+ " "+newLE.length); 
             }
 
     }
 }
-
-//=========================================================//
-//===Scroll Detection===//
-window.onscroll = function (){
-    let scroll = document.documentElement.scrollTop || document.body.scrollTop;
-    if(scroll > 50 && scroll < 100){
-
-        descp1.style.fontSize="17px";
-        
-        desctitle.classList.add("animate__animated","animate__jello");
-        desctitle.style.animationDuration = "2s";
-
-        descp1.classList.add("animate__animated","animate__heartBeat");
-        descp1.style.animationDelay = "0.5s";
-        descp1.style.animationName = "aSize";
-        descp1.style.animationDuration = "1s";
-
-    }
-
-}
-//==================================================//
-//======Hamburguers Anim=========//
-
-
-setInterval(() => {
-        let anim = 'animate__wobble';
-        for (let i = 0; i < 3; i++) {
-            if(point[i].classList.contains(anim) ){
-                point[i].classList.remove(anim)
-            }
-            else{
-                point[i].classList.add("animate__animated", anim);
-            }
-        }
-
-}, 1000);
-
-//=====Little blur effect in transition========//
-
-li3.addEventListener("click", ()=>{
-    document.body.style.filter = "blur(3px)";
-    setTimeout(() => {
-        let blur = 3;
-        for (let i = 0; i < blur; i+=0.1) {
-            blur-=1;
-            document.body.style.filter = "blur("+blur+"px)";            
-        }
-    }, 200);
-})
-
-
-//===Carousel==///
-$('.carousel').carousel();
-$('.carousel').carousel({
-    interval: 20,
-  });
-//=============//
 
 
 //=====Take Away Menu========//

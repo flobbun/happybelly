@@ -14,7 +14,6 @@
 </head>
 
 <!--------------------------------------------------->
-
 <body>
     <div class="row parallax" id="mainHeader">
         <div class="container-fluid">
@@ -42,11 +41,13 @@
         </div>
     </div>
 
-<!----------------MainSection------------------------>
 
-    <div class="container-fluid parallax" id="mainSection">
-            <div id="carouselExampleControls" class="carousel slide container col-md-12 p-4" data-pause="false" data-ride="carousel">
-                <div class="carousel-inner">
+
+<!----------------Carousel------------------------>
+
+    <div data-tilt style="transform-style: preserve-3d;" class="cCarousel container-fluid parallax" id="mainSection">
+            <div style="transform: translateZ(40px);" id="carouselExampleControls" class="carousel slide container col-md-12 p-4" data-pause="false" data-ride="carousel">
+                <div style="transform: translateZ(40px);" class="carousel-inner">
                   <div class="carousel-item active">
                     <img class="d-block" src="./img/pic1.jpg" alt="">
                   </div>
@@ -68,11 +69,13 @@
               </div>
     </div>
 
+
+
 <!----------------TakeAwaySection------------------------>
 
     <div class="container parallax col-md-12" id="takeAwaySection">
-        <section>
-            <h2 class="text-center">Get your food fast and fresh with us</h2>
+        <section class="p-2">
+            <h2 class="text-center p-2">Get your food fast and fresh with us</h2>
             <div class="row p-2">
                 <div class="container col-md-4 p-2">
                     <li> <span class="point">🍔</span> Elit, ipsum dolor sit amet consectetur adipisicing. </li>
@@ -91,14 +94,17 @@
 
             <!--------------------------------------------------->
 
-            <div id="menuContainer" class="row col-md-12">
+                <div id="menuContainer" class="row col-md-12">
 
-            </div>
+                </div>
+
+                
+            
+
 
             <!--------------------------------------------------->
         </section>
     </div>
-
 
 
     <!----------------FOOTER------------------------>
@@ -115,9 +121,12 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/tilt.js@1.2.1/dest/tilt.jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
+    <script src="js/anims.js"></script>
 
 </body>
 </html>
