@@ -282,23 +282,6 @@
   100% {
     opacity: 1;
     transform: translateY(0); } }
-.custom-shape-divider-top-1600025065 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0; }
-
-.custom-shape-divider-top-1600025065 svg {
-  position: relative;
-  display: block;
-  width: calc(132% + 1.3px);
-  height: 228px; }
-
-.custom-shape-divider-top-1600025065 .shape-fill {
-  fill: rgba(238, 204, 12, 0.438); }
-
 body {
   background-image: url("https://images.pexels.com/photos/4021952/pexels-photo-4021952.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
   background-attachment: fixed;
